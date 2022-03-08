@@ -16,8 +16,4 @@ Usage:
 
 # NOTE
   
-        1. message.txt: adalah pesan yang akan dibroadcast
-        
-        2. How Long Delay Per Channel?: adalah delay channel satu ke channel berikutnya (satuan detik)
-        
-        3. How Long Delay All Channel?: adalah delay setelah seluruh channel dibroadcast
+        1. buka folder word_lists, buka file txt di dalamnya, ganti list username 
