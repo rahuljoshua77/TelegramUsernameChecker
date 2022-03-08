@@ -5,7 +5,7 @@ import configparser
 import time
 import os
 
-
+from telethon.tl.functions.account import UpdateUsernameRequest
 config = configparser.ConfigParser()
 config.read('config.ini')
 
@@ -28,12 +28,18 @@ def userLookup(account):
             result = client(functions.account.CheckUsernameRequest(username=account))
             if result == True:
                 print("The telegram", account, "is available")
+                
+
+                client(UpdateUsernameRequest(account))
+                
                 file = open(output(), 'a')
                 file.write("%s\n" % (account))
                 file.close()
+                exit()
             else:
                 print("The telegram", account, "is not available")
         except errors.FloodWaitError as fW:
+            
             print("Hit the rate limit, waiting", fW.seconds, "seconds")
             time.sleep(fW.seconds)
         except errors.UsernameInvalidError as uI:
